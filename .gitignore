@@ -22,3 +22,8 @@ web_modules/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Personal files
+/Abhishek Patil.pdf
+/Screenshot_14-6-2026_18744_.jpeg
+
