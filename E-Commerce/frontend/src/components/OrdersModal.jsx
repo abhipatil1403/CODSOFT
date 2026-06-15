@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { X, Calendar, DollarSign, Package } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
 const OrdersModal = ({ isOpen, onClose }) => {
   const { token } = useApp();
   const [orders, setOrders] = useState([]);
@@ -16,7 +18,7 @@ const OrdersModal = ({ isOpen, onClose }) => {
   const fetchOrders = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/orders/myorders', {
+      const res = await fetch(`${API_URL}/orders/myorders`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
